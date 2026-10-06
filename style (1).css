@@ -1,0 +1,288 @@
+:root {
+  --navy: #0a2a5e;
+  --navy-deep: #07204a;
+  --ink: #1b2430;
+  --slate: #566175;
+  --rule: #d3d9e3;
+  --paper: #f6f7f9;
+  --white: #ffffff;
+  --brass: #b08d3c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+}
+
+a {
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 56px 0 48px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.portrait {
+  width: 190px;
+  height: 230px;
+  object-fit: cover;
+  object-position: 58% 22%;
+  border: 3px solid var(--white);
+  flex-shrink: 0;
+}
+
+.header h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 3rem;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.tagline {
+  margin-top: 6px;
+  font-size: 1.1rem;
+  color: #c9d5ea;
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 2px solid var(--brass);
+  display: grid;
+  gap: 4px;
+}
+
+.contact-list a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--navy-deep);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.nav-links a {
+  display: block;
+  color: #c9d5ea;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 16px 16px 13px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+  border-bottom-color: var(--brass);
+}
+
+/* Sections: label column on the left, content on the right, as on the CV */
+.section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 44px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.content > * + * {
+  margin-top: 14px;
+}
+
+.content p {
+  color: #3b4657;
+}
+
+.content strong {
+  color: var(--ink);
+}
+
+.entry + .entry {
+  margin-top: 30px;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.entry h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.date {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.org {
+  color: var(--slate);
+  margin-top: 2px;
+}
+
+.sub {
+  margin-top: 10px;
+  color: var(--slate);
+  font-weight: 500;
+}
+
+.entry ul,
+.skill-group ul {
+  margin: 6px 0 0 20px;
+  color: #3b4657;
+}
+
+.entry li,
+.skill-group li {
+  padding-left: 4px;
+  margin-top: 3px;
+}
+
+.entry li::marker,
+.skill-group li::marker {
+  color: var(--brass);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 28px;
+}
+
+.skills-grid > * + * {
+  margin-top: 0;
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--rule);
+}
+
+/* Referee */
+.referee-name {
+  font-weight: 600;
+  color: var(--ink) !important;
+}
+
+/* Footer */
+.footer {
+  background: var(--navy-deep);
+  color: #c9d5ea;
+  text-align: center;
+  padding: 22px 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 0 36px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .header h1 {
+    font-size: 2.1rem;
+  }
+
+  .contact-list {
+    justify-items: center;
+    word-break: break-word;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 32px 0;
+  }
+
+  .entry-head {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
